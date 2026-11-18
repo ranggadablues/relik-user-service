@@ -4,8 +4,8 @@ go 1.24.7
 
 require (
 	github.com/joho/godotenv v1.5.1
-	github.com/ranggadablues/gosok v0.1.3
-	github.com/ranggadablues/relik-proto-library v0.0.1
+	github.com/ranggadablues/gosok v0.2.0
+	github.com/ranggadablues/relik-proto-library v0.1.0
 	github.com/stretchr/testify v1.11.1
 	go.mongodb.org/mongo-driver/v2 v2.4.0
 	google.golang.org/grpc v1.78.0
@@ -51,9 +51,3 @@ require (
 	google.golang.org/genproto/googleapis/rpc v0.0.0-20260128011058-8636f8732409 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
-
-// // ojok lali iki di delete nek arep di commit
-replace github.com/ranggadablues/relik-proto-library => ../relik-proto-library
-
-// // ojok lali iki di delete nek arep di commit
-replace github.com/ranggadablues/gosok => /Users/ranggahendradita/Documents/go/src/github.com/ranggadablues/gosok
