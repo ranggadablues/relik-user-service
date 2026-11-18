@@ -1,0 +1,13 @@
+.git
+.github
+.gitignore
+.DS_Store
+Dockerfile
+.dockerignore
+.env
+.env.*
+**/.env
+**/.env.*
+test
+*_test.go
+*.test
