@@ -44,6 +44,10 @@ func NewUserBusinessLogic() IUserBusinessLogic {
 	return &UserBusinessLogic{userRepo: repository.NewUserRepo}
 }
 
+func NewUserBusinessLogicWithRepo(repo repository.IUserRepo) IUserBusinessLogic {
+	return &UserBusinessLogic{userRepo: func() repository.IUserRepo { return repo }}
+}
+
 func (u *UserBusinessLogic) CreateUser(ctx context.Context, req *pb.CreateUserRequest) (*pb.CreateBasicUserResponse, error) {
 	// validate user
 	if err := createUserValidation(req); err != nil {
@@ -180,6 +184,9 @@ func (u *UserBusinessLogic) snedActivationEmail(ctx context.Context, req *pb.Cre
 }
 
 func createUserValidation(req *pb.CreateUserRequest) error {
+	if req == nil || req.User == nil || req.Userdetails == nil {
+		return common.Error("user and user details are required", nil)
+	}
 	if req.Userdetails.Name == "" {
 		return common.Error("name is required", nil)
 	}
