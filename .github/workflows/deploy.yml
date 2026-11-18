@@ -55,7 +55,7 @@ jobs:
             # Log in to GHCR on VPS
             echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
 
-            cd /srv/relik/user
+            cd /srv/user
 
             # Pull new image while current container is still running
             docker compose pull
